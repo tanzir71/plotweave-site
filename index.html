@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plotweave: free local AI video studio. Topic in, finished video out.</title>
+  <meta name="description" content="Plotweave researches, writes, voices and edits complete videos on your computer. Free on your GPU, premium models with your own keys, recipes for whole series.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0F0D14">
+  <link rel="canonical" href="https://plotweave.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Plotweave">
+  <meta property="og:title" content="Plotweave: free local AI video studio">
+  <meta property="og:description" content="Topic in. Finished video out. Free on your GPU, premium models with your own keys, recipes for whole series.">
+  <meta property="og:url" content="https://plotweave.app/">
+  <meta property="og:image" content="https://plotweave.app/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Plotweave hero stage: a video in progress on Autopilot, with the topic typed in the composer.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Plotweave: free local AI video studio">
+  <meta name="twitter:description" content="Topic in. Finished video out. Free on your GPU, premium models with your own keys.">
+  <meta name="twitter:image" content="https://plotweave.app/assets/img/og-image.jpg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/FamiljenGrotesk-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/tokens.css">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/site.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Plotweave",
+    "url": "https://plotweave.app/",
+    "image": "https://plotweave.app/assets/img/og-image.jpg",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Windows, macOS",
+    "description": "Plotweave researches, writes, voices and edits complete videos on your computer. Free on your GPU, premium models with your own keys, recipes for whole series.",
+    "author": { "@type": "Person", "name": "Tanzir Rahman" },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Plotweave app for Windows and macOS",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://plotweave.app/#download"
+      },
+      {
+        "@type": "Offer",
+        "name": "Plotweave source code",
+        "price": "5",
+        "priceCurrency": "USD",
+        "url": "https://gumroad.com/l/plotweave-codebase"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg class="icon-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <!-- Lucide icons (ISC licence), 24 viewBox, drawn with a 1.75 stroke in CSS. -->
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.4-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5Z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></symbol>
+    <symbol id="i-captions" viewBox="0 0 24 24"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M7 15h4M15 15h2M7 11h2M13 11h4"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"/><path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  </svg>
+
+  <header class="site-nav" data-nav>
+    <div class="nav-inner">
+      <a class="wordmark" href="#top" aria-label="Plotweave home"><span class="wordmark-mark" aria-hidden="true"></span>Plotweave</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#product">Product</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#pricing">Pricing</a>
+        <a href="compare/">Compare</a>
+        <a href="/docs/">Docs</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost btn-s nav-demo" href="/demo/">Try the demo</a>
+        <a class="btn btn-primary btn-s" href="#download" data-download>Download</a>
+        <button class="nav-menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu" data-menu-button>
+          <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="nav-panel" id="nav-panel" hidden>
+      <nav aria-label="Menu">
+        <a href="#product">Product</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#pricing">Pricing</a>
+        <a href="compare/">Compare</a>
+        <a href="/docs/">Docs</a>
+      </nav>
+      <a class="btn btn-secondary" href="/demo/">Try the demo</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-copy">
+        <a class="announce" href="#recipes"><span class="announce-tag">New</span><span>Recipes: a whole series on autopilot</span></a>
+        <h1 class="hero-title" id="hero-title">Topic in. Finished video out.</h1>
+        <p class="hero-sub body-l">Plotweave researches, writes, voices, shoots and edits a complete video on your own computer. Free on your GPU, or bring your own keys for premium models.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#download" data-download data-download-label>Download free</a>
+          <button class="btn btn-ghost" type="button" data-player data-title="Plotweave in 60 seconds" data-meta="Demo video" data-aspect="16 / 9" data-poster-from="#hero-picture" data-video-mp4="" data-video-webm="">
+            <svg class="icon icon-fill icon-s" aria-hidden="true"><use href="#i-play"/></svg>Watch the 60-second demo
+          </button>
+        </div>
+        <p class="fine-print">Free for Windows and macOS. No account, no subscription.</p>
+      </div>
+
+      <div class="container">
+        <div class="stage" id="product">
+          <div class="stage-glow" aria-hidden="true"></div>
+          <div class="stage-media">
+            <!-- Replace with a real Plotweave render before launch: muted, looping <video> (H.264 + WebM) using this picture as its poster. -->
+            <picture id="hero-picture">
+              <source type="image/avif" srcset="assets/img/hero-observatory-800.avif 800w, assets/img/hero-observatory-1600.avif 1600w, assets/img/hero-observatory-2400.avif 2400w" sizes="(max-width: 768px) 240vw, (max-width: 1264px) calc(100vw - 64px), 1200px">
+              <source type="image/webp" srcset="assets/img/hero-observatory-800.webp 800w, assets/img/hero-observatory-1600.webp 1600w, assets/img/hero-observatory-2400.webp 2400w" sizes="(max-width: 768px) 240vw, (max-width: 1264px) calc(100vw - 64px), 1200px">
+              <img src="assets/img/hero-observatory-1600.jpg" srcset="assets/img/hero-observatory-800.jpg 800w, assets/img/hero-observatory-1600.jpg 1600w, assets/img/hero-observatory-2400.jpg 2400w" sizes="(max-width: 768px) 240vw, (max-width: 1264px) calc(100vw - 64px), 1200px" width="1200" height="640" alt="Observatory domes on a hillside under the Milky Way, a shot from a video in progress" fetchpriority="high" decoding="async">
+            </picture>
+            <div class="stage-scrim" aria-hidden="true"></div>
+            <p class="glass status-pill"><span class="dot" aria-hidden="true"></span><strong>Autopilot</strong><span>Making shot 4 of 6 on your GPU</span></p>
+            <p class="glass timecode"><span class="visually-hidden">Playback position </span>00:06 / 01:00</p>
+          </div>
+          <div class="composer glass" role="group" aria-label="Example: the topic typed into Plotweave">
+            <p class="composer-text">Why is the night sky dark? A calm 60-second explainer for curious teenagers.</p>
+            <div class="composer-row">
+              <ul class="chips" aria-label="Choices for this video">
+                <li class="chip">60 s</li>
+                <li class="chip">9:16</li>
+                <li class="chip">Ava, warm voice</li>
+                <li class="chip">Stop to review the script</li>
+              </ul>
+              <span class="btn btn-primary btn-s composer-btn" aria-hidden="true">Make video</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reel" id="examples" aria-labelledby="reel-title">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <h2 id="reel-title">Each of these started as one line.</h2>
+            <p class="section-sub">One topic line each, no editing afterwards.</p>
+          </div>
+          <a class="text-link" href="/examples/">See more examples</a>
+        </div>
+        <!-- Posters are placeholder photos. Replace them, and fill data-video-mp4 / data-video-webm, with real Plotweave renders before launch. -->
+        <ul class="reel-track" role="list">
+          <li class="reel-card">
+            <button class="reel-poster" type="button" data-player data-title="Why is the night sky dark?" data-meta="60 s, English" data-aspect="9 / 16" data-video-mp4="" data-video-webm="" aria-label="Play: Why is the night sky dark?">
+              <picture>
+                <source type="image/avif" srcset="assets/img/reel-night-sky-300.avif 300w, assets/img/reel-night-sky-600.avif 600w" sizes="224px">
+                <source type="image/webp" srcset="assets/img/reel-night-sky-300.webp 300w, assets/img/reel-night-sky-600.webp 600w" sizes="224px">
+                <img src="assets/img/reel-night-sky-600.jpg" srcset="assets/img/reel-night-sky-300.jpg 300w, assets/img/reel-night-sky-600.jpg 600w" sizes="224px" width="224" height="398" alt="" loading="lazy" decoding="async">
+              </picture>
+              <span class="play-btn glass" aria-hidden="true"><svg class="icon icon-fill"><use href="#i-play"/></svg></span>
+            </button>
+            <h3 class="reel-title">Why is the night sky dark?</h3>
+            <p class="reel-meta">60 s, English</p>
+          </li>
+          <li class="reel-card">
+            <button class="reel-poster" type="button" data-player data-title="Five habits of deep focus" data-meta="58 s, English" data-aspect="9 / 16" data-video-mp4="" data-video-webm="" aria-label="Play: Five habits of deep focus">
+              <picture>
+                <source type="image/avif" srcset="assets/img/reel-deep-focus-300.avif 300w, assets/img/reel-deep-focus-600.avif 600w" sizes="224px">
+                <source type="image/webp" srcset="assets/img/reel-deep-focus-300.webp 300w, assets/img/reel-deep-focus-600.webp 600w" sizes="224px">
+                <img src="assets/img/reel-deep-focus-600.jpg" srcset="assets/img/reel-deep-focus-300.jpg 300w, assets/img/reel-deep-focus-600.jpg 600w" sizes="224px" width="224" height="398" alt="" loading="lazy" decoding="async">
+              </picture>
+              <span class="play-btn glass" aria-hidden="true"><svg class="icon icon-fill"><use href="#i-play"/></svg></span>
+            </button>
+            <h3 class="reel-title">Five habits of deep focus</h3>
+            <p class="reel-meta">58 s, English</p>
+          </li>
+          <li class="reel-card">
+            <button class="reel-poster" type="button" data-player data-title="ঢাকার বর্ষা" data-meta="45 s, Bangla" data-aspect="9 / 16" data-video-mp4="" data-video-webm="" aria-label="Play: ঢাকার বর্ষা (Bangla)">
+              <picture>
+                <source type="image/avif" srcset="assets/img/reel-dhaka-rain-300.avif 300w, assets/img/reel-dhaka-rain-600.avif 600w" sizes="224px">
+                <source type="image/webp" srcset="assets/img/reel-dhaka-rain-300.webp 300w, assets/img/reel-dhaka-rain-600.webp 600w" sizes="224px">
+                <img src="assets/img/reel-dhaka-rain-600.jpg" srcset="assets/img/reel-dhaka-rain-300.jpg 300w, assets/img/reel-dhaka-rain-600.jpg 600w" sizes="224px" width="224" height="398" alt="" loading="lazy" decoding="async">
+              </picture>
+              <span class="play-btn glass" aria-hidden="true"><svg class="icon icon-fill"><use href="#i-play"/></svg></span>
+            </button>
+            <h3 class="reel-title" lang="bn">ঢাকার বর্ষা</h3>
+            <p class="reel-meta">45 s, Bangla</p>
+          </li>
+          <li class="reel-card">
+            <button class="reel-poster" type="button" data-player data-title="Lumen desk lamp" data-meta="30 s product ad" data-aspect="9 / 16" data-video-mp4="" data-video-webm="" aria-label="Play: Lumen desk lamp">
+              <picture>
+                <source type="image/avif" srcset="assets/img/reel-lumen-lamp-300.avif 300w, assets/img/reel-lumen-lamp-600.avif 600w" sizes="224px">
+                <source type="image/webp" srcset="assets/img/reel-lumen-lamp-300.webp 300w, assets/img/reel-lumen-lamp-600.webp 600w" sizes="224px">
+                <img src="assets/img/reel-lumen-lamp-600.jpg" srcset="assets/img/reel-lumen-lamp-300.jpg 300w, assets/img/reel-lumen-lamp-600.jpg 600w" sizes="224px" width="224" height="398" alt="" loading="lazy" decoding="async">
+              </picture>
+              <span class="play-btn glass" aria-hidden="true"><svg class="icon icon-fill"><use href="#i-play"/></svg></span>
+            </button>
+            <h3 class="reel-title">Lumen desk lamp</h3>
+            <p class="reel-meta">30 s product ad</p>
+          </li>
+          <li class="reel-card">
+            <button class="reel-poster" type="button" data-player data-title="How octopuses see colour" data-meta="52 s, English" data-aspect="9 / 16" data-video-mp4="" data-video-webm="" aria-label="Play: How octopuses see colour">
+              <picture>
+                <source type="image/avif" srcset="assets/img/reel-octopus-300.avif 300w, assets/img/reel-octopus-600.avif 600w" sizes="224px">
+                <source type="image/webp" srcset="assets/img/reel-octopus-300.webp 300w, assets/img/reel-octopus-600.webp 600w" sizes="224px">
+                <img src="assets/img/reel-octopus-600.jpg" srcset="assets/img/reel-octopus-300.jpg 300w, assets/img/reel-octopus-600.jpg 600w" sizes="224px" width="224" height="398" alt="" loading="lazy" decoding="async">
+              </picture>
+              <span class="play-btn glass" aria-hidden="true"><svg class="icon icon-fill"><use href="#i-play"/></svg></span>
+            </button>
+            <h3 class="reel-title">How octopuses see colour</h3>
+            <p class="reel-meta">52 s, English</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section automation" id="recipes" aria-labelledby="recipes-title">
+      <div class="container automation-grid">
+        <div class="automation-copy">
+          <h2 id="recipes-title">Set it up once. It runs the whole way.</h2>
+          <p class="body-l muted">A recipe remembers every choice: tone, voice, look, captions, music, where shots are made, and where to stop for your approval. Run it on one topic or a list of fifty.</p>
+          <ul class="points">
+            <li>
+              <h3>Autopilot, or stop where you want</h3>
+              <p>Let it finish on its own, or pause after the script or the shots for a quick look.</p>
+            </li>
+            <li>
+              <h3>Ask for changes in plain words</h3>
+              <p>Say "make the opening punchier" or "warmer footage", and only the affected steps run again.</p>
+            </li>
+            <li>
+              <h3>Batch and schedule</h3>
+              <p>Give it a list of topics. It renders while you sleep and leaves finished videos in your folder.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="recipe-card" role="group" aria-label="Example recipe: Daily science short">
+          <div class="recipe-head">
+            <div>
+              <p class="recipe-kicker">Recipe</p>
+              <p class="recipe-name">Daily science short</p>
+            </div>
+            <p class="schedule-pill"><svg class="icon icon-s" aria-hidden="true"><use href="#i-clock"/></svg>Weekdays at 9:00</p>
+          </div>
+          <ol class="recipe-steps">
+            <li class="recipe-step"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span class="step-name">Research</span><span class="step-detail">Web sources, 5 facts checked</span><svg class="icon icon-s step-chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg></li>
+            <li class="recipe-step"><svg class="icon" aria-hidden="true"><use href="#i-type"/></svg><span class="step-name">Script</span><span class="step-detail">Calm, 60 s, open with a question</span><svg class="icon icon-s step-chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg></li>
+            <li class="recipe-step"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg><span class="step-name">Voice</span><span class="step-detail">Ava, warm, English</span><svg class="icon icon-s step-chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg></li>
+            <li class="recipe-step"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg><span class="step-name">Shots</span><span class="step-detail">Your GPU first, your keys for the opening shot</span><svg class="icon icon-s step-chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg></li>
+            <li class="recipe-step"><svg class="icon" aria-hidden="true"><use href="#i-captions"/></svg><span class="step-name">Captions</span><span class="step-detail">Bold pop, word by word</span><svg class="icon icon-s step-chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg></li>
+            <li class="recipe-step"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span class="step-name">Music</span><span class="step-detail">Ambient, lowered under the voice</span><svg class="icon icon-s step-chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg></li>
+            <li class="recipe-step is-review"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span class="step-name">Review</span><span class="step-detail">Stop after the script</span><span class="wait-pill">Waits for you</span></li>
+            <li class="recipe-step"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span class="step-name">Export</span><span class="step-detail">MP4, captions and publish kit to Videos/Science</span><svg class="icon icon-s step-chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg></li>
+          </ol>
+          <div class="recipe-foot">
+            <p>Next run: 14 topics in queue, about $0.40 each</p>
+            <span class="btn btn-secondary btn-s" aria-hidden="true">Run now</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band ownership" id="ownership" aria-labelledby="ownership-title">
+      <div class="container">
+        <h2 id="ownership-title">Your GPU, your keys, your files.</h2>
+        <p class="section-sub body-l">Nothing is rented. You choose where each step runs and what it costs.</p>
+        <div class="own-grid">
+          <article class="own-col">
+            <svg class="icon is-local" aria-hidden="true"><use href="#i-cpu"/></svg>
+            <h3>Free on your GPU</h3>
+            <p>Open models run on your graphics card. No credits, no queue, nothing uploaded.</p>
+          </article>
+          <article class="own-col">
+            <svg class="icon is-keys" aria-hidden="true"><use href="#i-key"/></svg>
+            <h3>Premium when it matters</h3>
+            <p>Use your own keys for top models on the shots that carry the story. You see the provider's price before anything is made.</p>
+          </article>
+          <article class="own-col">
+            <svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>
+            <h3>Yours to keep</h3>
+            <p>Free to use, with no account. Projects and renders live in a folder you choose and keep working offline.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="pricing-head">
+          <h2 id="pricing-title">Free to use. Source when you want it.</h2>
+          <p class="section-sub body-l">The app is free on Windows and macOS. Buy the source code to change how it works or build your own product on it.</p>
+        </div>
+        <div class="price-grid">
+          <article class="price-card is-featured" aria-labelledby="price-app">
+            <h3 id="price-app">Plotweave</h3>
+            <p class="price-for">For creators</p>
+            <p class="price"><span class="price-amount">Free</span><span class="price-term">forever</span></p>
+            <ul class="checks">
+              <li><svg class="icon icon-s" aria-hidden="true"><use href="#i-check"/></svg>The full app, no watermark</li>
+              <li><svg class="icon icon-s" aria-hidden="true"><use href="#i-check"/></svg>Autopilot, recipes and batch</li>
+              <li><svg class="icon icon-s" aria-hidden="true"><use href="#i-check"/></svg>Your GPU, your keys and stock footage</li>
+              <li><svg class="icon icon-s" aria-hidden="true"><use href="#i-check"/></svg>English and Bangla voices</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="#download" data-download>Download free</a>
+          </article>
+          <article class="price-card" aria-labelledby="price-source">
+            <h3 id="price-source">Source code</h3>
+            <p class="price-for">For builders</p>
+            <p class="price"><span class="price-amount">$5</span><span class="price-term">one time</span></p>
+            <ul class="checks">
+              <li><svg class="icon icon-s" aria-hidden="true"><use href="#i-check"/></svg>The complete codebase</li>
+              <li><svg class="icon icon-s" aria-hidden="true"><use href="#i-check"/></svg>Add your own models, templates and screens</li>
+              <li><svg class="icon icon-s" aria-hidden="true"><use href="#i-check"/></svg>Architecture docs and extension guide</li>
+              <li><svg class="icon icon-s" aria-hidden="true"><use href="#i-check"/></svg>Use it in client and commercial work</li>
+            </ul>
+            <a class="btn btn-secondary btn-block" href="https://gumroad.com/l/plotweave-codebase">Buy the source code</a>
+          </article>
+        </div>
+        <p class="price-note">Local models are free. Cloud models are billed by the provider you choose, at their price.</p>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-wrap">
+        <h2 id="faq-title">Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item" name="faq" open>
+            <summary><h3 class="faq-q">What computer do I need?</h3><svg class="icon faq-icon-open" aria-hidden="true"><use href="#i-chevron-down"/></svg><svg class="icon faq-icon-closed" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p class="faq-a">Scripts, voices and stock-footage videos run on any recent Windows or Mac computer. Making video on your own GPU needs an NVIDIA card with 8 GB or more: expect minutes per shot on 8 GB, much less on 12 GB and up. Without one, use stock footage and your own keys.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary><h3 class="faq-q">Do I need API keys?</h3><svg class="icon faq-icon-open" aria-hidden="true"><use href="#i-chevron-down"/></svg><svg class="icon faq-icon-closed" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p class="faq-a">No. Plotweave works with local models and stock footage alone. Keys are optional, for premium models on the shots that matter most.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary><h3 class="faq-q">Who owns the videos?</h3><svg class="icon faq-icon-open" aria-hidden="true"><use href="#i-chevron-down"/></svg><svg class="icon faq-icon-closed" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p class="faq-a">You do. Plotweave adds no watermark and claims no rights. Check the licence of any model or stock clip you use; each video comes with a credits file.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary><h3 class="faq-q">Does it work offline?</h3><svg class="icon faq-icon-open" aria-hidden="true"><use href="#i-chevron-down"/></svg><svg class="icon faq-icon-closed" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p class="faq-a">Yes, once your local models are installed. Cloud models and stock search need a connection.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary><h3 class="faq-q">What comes with the source code?</h3><svg class="icon faq-icon-open" aria-hidden="true"><use href="#i-chevron-down"/></svg><svg class="icon faq-icon-closed" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p class="faq-a">The full codebase, architecture docs and an extension guide, so you can add models, change the interface, or build your own product on it.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="download" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <h2 class="display-title" id="cta-title">Make your first video tonight.</h2>
+        <p class="body-l muted cta-sub">Download Plotweave free, type a topic, and watch it come together.</p>
+        <div class="cta-actions">
+          <!-- Download URLs are placeholders: update before publishing (see README). -->
+          <a class="btn btn-primary" href="/download/windows" data-os-choice="windows">Download free for Windows</a>
+          <a class="btn btn-secondary" href="/download/macos" data-os-choice="macos">Download free for macOS</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="support" aria-labelledby="support-title">
+    <div class="container">
+      <div class="support-card">
+        <svg class="icon support-icon" aria-hidden="true"><use href="#i-coffee"/></svg>
+        <div class="support-copy">
+          <p class="support-title" id="support-title">Plotweave is free and made by one person.</p>
+          <p class="support-line">Tanzir Rahman is fueling open-source code, local utilities, and late-night builds.</p>
+        </div>
+        <a class="btn btn-secondary" href="https://buymeacoffee.com/tanzir" target="_blank" rel="noopener">Buy me a coffee</a>
+      </div>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-wordmark" href="#top">Plotweave</a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/docs/">Docs</a>
+        <a href="/changelog/">Changelog</a>
+        <a href="compare/">Compare</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/licence/">Licence</a>
+        <a href="credits.html">Credits</a>
+        <a href="/contact/">Contact</a>
+        <a class="footer-support" href="https://buymeacoffee.com/tanzir" target="_blank" rel="noopener">Support</a>
+      </nav>
+    </div>
+  </footer>
+
+  <dialog class="player" id="player" aria-labelledby="player-title">
+    <div class="player-head">
+      <div>
+        <p class="player-title" id="player-title" data-player-title></p>
+        <p class="player-meta" data-player-meta></p>
+      </div>
+      <button class="player-close" type="button" aria-label="Close player" data-player-close><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="player-media" data-player-media>
+      <!-- site.js inserts a <video> here when the trigger has data-video-mp4 / data-video-webm; otherwise it shows the poster. -->
+      <div class="player-soon glass" data-player-soon>
+        <p class="player-soon-title">Demo video coming soon</p>
+        <p>This is the poster for now. The finished video will play here.</p>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
