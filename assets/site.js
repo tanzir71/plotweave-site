@@ -5,8 +5,8 @@
 
   // Download URLs are placeholders: update before publishing (see landing-page/README.md).
   var DOWNLOADS = {
-    windows: { label: "Windows", href: "/download/windows" },
-    macos: { label: "macOS", href: "/download/macos" }
+    windows: { label: "Windows", href: "https://github.com/tanzir71/plotweave-site/releases/latest/download/PlotweaveSetup-3.0.0.exe" },
+    macos: { label: "macOS", href: "https://github.com/tanzir71/plotweave-site/releases/latest" }
   };
 
   var nav = document.querySelector("[data-nav]");

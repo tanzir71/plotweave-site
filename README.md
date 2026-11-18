@@ -4,7 +4,10 @@
 edits a complete narrated video on your own computer: free on your GPU, or with your
 own keys for premium models.
 
-This repository holds the Plotweave website and the free app's downloads.
+**Website:** https://tanzir71.github.io/plotweave-site/
+
+This repository holds the Plotweave website (published with GitHub Pages) and the free
+app's downloads.
 
 ## Download
 
